@@ -1,0 +1,5 @@
+{
+  "name": "VoiceSteer Dashboard",
+  "description": "A Twilio-style dashboard for VoiceSteer, providing vertical-specific action cards for streamlined AI assistant setup and management, mirroring the intuitive and scalable layout of platforms like Twilio.",
+  "requestFramePermissions": []
+}

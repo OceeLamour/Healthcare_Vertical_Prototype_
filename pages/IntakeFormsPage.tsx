@@ -44,10 +44,10 @@ export default function IntakeFormsPage() {
         <div className="max-w-4xl mx-auto">
             <div className="mb-6">
                 <h1 className="text-3xl font-bold text-primary">
-                    Intake Forms
+                    Patient Intake Forms
                 </h1>
                 <p className="text-secondary mt-1">
-                    Build secure forms for client information.
+                    Build secure, HIPAA-compliant forms for patient information.
                 </p>
             </div>
 
@@ -122,7 +122,7 @@ export default function IntakeFormsPage() {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-secondary text-center">
-                                    PII?
+                                    PHI?
                                 </label>
                                 <select
                                     value={field.phi ? 'true' : 'false'}

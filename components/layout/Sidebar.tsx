@@ -28,7 +28,7 @@ const NavLink = ({ to, icon, label, isCollapsed }: { to: string, icon: React.Rea
       }
     >
       {icon}
-      <span className={`ml-3 whitespace-nowrap transition-opacity duration-150 ease-in-out ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100'}`}>
+      <span className={`ml-3 whitespace-nowrap transition-opacity duration-150 ease-in-out ${isCollapsed ? 'opacity-0' : 'opacity-100'}`}>
         {label}
       </span>
     </RouterNavLink>
@@ -41,7 +41,7 @@ const Logo = ({ isCollapsed }: { isCollapsed: boolean }) => (
       <div className="w-8 h-8 rounded-md bg-gradient-to-br from-cta to-cta-light flex items-center justify-center">
         <WaveIcon className="h-5 w-5 text-white" />
       </div>
-      <span className={`text-lg font-semibold text-white whitespace-nowrap transition-opacity duration-150 ease-in-out ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100'}`}>
+      <span className={`text-lg font-semibold text-white whitespace-nowrap transition-opacity duration-150 ease-in-out ${isCollapsed ? 'opacity-0' : 'opacity-100'}`}>
         VoiceSteer
       </span>
     </div>
@@ -79,7 +79,7 @@ export function Sidebar({ isCollapsed, setIsCollapsed }: SidebarProps) {
   const sidebarWidth = isCollapsed ? 'w-[72px]' : 'w-[240px]';
 
   return (
-    <aside className={`bg-sidebar-dark-bg text-white h-full flex flex-col flex-shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-[2px_0_8px_rgba(0,0,0,0.1)] border-r border-white/5 ${sidebarWidth}`}>
+    <aside className={`bg-sidebar-dark-bg text-white h-full flex flex-col flex-shrink-0 fixed left-0 top-0 z-20 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-[2px_0_8px_rgba(0,0,0,0.1)] border-r border-white/5 ${sidebarWidth}`}>
       <Logo isCollapsed={isCollapsed} />
 
       <nav className="flex-1 px-2 py-4 space-y-2 overflow-y-auto">

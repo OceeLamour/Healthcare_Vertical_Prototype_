@@ -26,13 +26,24 @@ const UserAvatar = ({ user }: { user: User }) => (
 );
 
 export function TopBar({ user, activeTab, setActiveTab }: TopBarProps) {
-  const tabs = [
+  const legalTabs = [
     { id: 'For You', label: 'For You' },
     { id: 'Compliance', label: 'Compliance' },
     { id: 'Safety Rules', label: 'Safety Rules' },
     { id: 'Transparency', label: 'Transparency' },
     { id: 'Client Intake', label: 'Client Intake' }
   ];
+
+  const healthcareTabs = [
+    { id: 'For You', label: 'For You' },
+    { id: 'HIPAA Compliance', label: 'HIPAA Compliance' },
+    { id: 'Protocols', label: 'Protocols' },
+    { id: 'Transparency', label: 'Transparency' },
+    { id: 'Patient Intake', label: 'Patient Intake' }
+  ];
+  
+  const tabs = user.vertical === 'Healthcare' ? healthcareTabs : legalTabs;
+
 
   return (
     <header className="bg-white border-b border-gray-200 px-6 py-2 sticky top-0 z-10 h-16 flex items-center flex-shrink-0">

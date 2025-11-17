@@ -14,6 +14,9 @@ import ConversationsPage from './pages/ConversationsPage';
 import AnalyticsPage from './pages/AnalyticsPage';
 import SettingsPage from './pages/SettingsPage';
 import ConversationTranscriptPage from './pages/ConversationTranscriptPage';
+import ConsentTemplatesPage from './pages/ConsentTemplatesPage';
+import ProviderSyncPage from './pages/ProviderSyncPage';
+import ProviderSyncConnectPage from './pages/ProviderSyncConnectPage';
 
 export default function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -26,7 +29,7 @@ export default function App() {
             isCollapsed={isSidebarCollapsed}
             setIsCollapsed={setIsSidebarCollapsed}
           />
-          <div className="flex-1 flex flex-col overflow-hidden">
+          <div className={`flex-1 flex flex-col overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isSidebarCollapsed ? 'pl-[72px]' : 'pl-[240px]'}`}>
             <Routes>
               <Route path="/" element={<Navigate to="/app/dashboard" replace />} />
               <Route path="/app/dashboard" element={<DashboardHome />} />
@@ -36,12 +39,16 @@ export default function App() {
               <Route path="/app/conversation/:id" element={<ConversationTranscriptPage />} />
 
 
-              {/* Legal Vertical Routes */}
+              {/* Vertical Specific Routes */}
               <Route path="/app/book-consultations" element={<BookingPage />} />
               <Route path="/app/safety-compliance" element={<SafetyCompliancePage />} />
               <Route path="/app/intake-forms" element={<IntakeFormsPage />} />
+              <Route path="/app/consent-templates" element={<ConsentTemplatesPage />} />
+              <Route path="/app/provider-sync" element={<ProviderSyncPage />} />
+              <Route path="/app/provider-sync/connect" element={<ProviderSyncConnectPage />} />
+              <Route path="/app/provider/:id/schedule" element={<PlaceholderPage title="Provider Schedule" />} />
+
               
-              {/* Updated routes for other legal actions */}
               <Route path="/app/phone-setup" element={<PlaceholderPage title="Phone Setup" />} />
               <Route path="/app/transparency-log" element={<TransparencyLogPage />} />
               <Route path="/app/customize-ai" element={<CustomizeAIPage />} />

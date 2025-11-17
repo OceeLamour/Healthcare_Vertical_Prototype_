@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useMemo } from 'react';
-import { USER_MARIA } from '../constants';
+import { USER_NINA } from '../constants';
 import type { User } from '../types';
 
 interface UserContextType {
@@ -9,7 +9,7 @@ interface UserContextType {
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const value = useMemo(() => ({ currentUser: USER_MARIA }), []);
+  const value = useMemo(() => ({ currentUser: USER_NINA }), []);
 
   return (
     <UserContext.Provider value={value}>

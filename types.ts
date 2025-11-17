@@ -3,7 +3,7 @@ import type React from 'react';
 export interface User {
   id: number;
   name: string;
-  vertical: 'Legal Services';
+  vertical: 'Legal Services' | 'Healthcare';
   avatarUrl: string;
 }
 

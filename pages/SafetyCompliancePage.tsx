@@ -4,12 +4,12 @@ export default function SafetyCompliancePage() {
   const [disclaimers, setDisclaimers] = useState([
     {
       id: 'disclaimer_1',
-      text: 'This is not medical advice.',
+      text: 'This is not medical advice. For emergencies, call 911.',
       position: 'before_first_message'
     },
     {
       id: 'disclaimer_2',
-      text: 'For emergencies, call 911.',
+      text: 'By continuing, you consent to our telehealth policies.',
       position: 'after_booking'
     }
   ]);
@@ -17,9 +17,9 @@ export default function SafetyCompliancePage() {
   const [safetyRules, setSafetyRules] = useState([
     {
       id: 'rule_1',
-      pattern: 'sue, lawyer, emergency, legal advice',
+      pattern: 'chest pain, suicidal, can\'t breathe, allergic reaction',
       action: 'transfer',
-      message: 'Let me connect you with Maria directly for that.'
+      message: 'This sounds like an emergency. Let me connect you to our on-call nurse immediately.'
     }
   ]);
 
